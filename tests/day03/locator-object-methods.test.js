@@ -115,6 +115,18 @@ test.describe('Test Group', () => {
    let inputsLink=page.getByText("Inputs");
    let actualLink= await inputsLink.getAttribute('href');
    let expectedLink='/inputs';
-   await expect(actualLink).toEqual(expectedLink);
+   expect(actualLink).toEqual(expectedLink);
+  });
+
+  test('state methods of locator object', async({page}) =>{
+      let availableExamples=page.locator("//span[@class='h2']");
+
+      expect(await availableExamples.isVisible()).toBeTruthy();
+      await expect(availableExamples).toBeVisible();
+
+      let abTestingLink=page.locator("//a[text()='A/B Testing']");
+      expect(await abTestingLink.isEnabled()).toBeTruthy();
+      await expect(abTestingLink).toBeEnabled();
+
   });
 });
