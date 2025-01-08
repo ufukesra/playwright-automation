@@ -5,7 +5,7 @@
   "scripts": {
     "tests":"playwright test",
     "test:specific":"playwright test ./tests/*/playwright-intro.test.js",
-    "test:tag":"npx playwright test --grep @youtube",
+    "test:tag":"npx playwright test --grep @group2",
     "report":"playwright show-report",
     "test:headed":"playwright test --headed",
     "test:chrome-headed": "playwright test --headed --project=chromium"
