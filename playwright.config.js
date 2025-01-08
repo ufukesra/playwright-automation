@@ -12,7 +12,7 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 module.exports = defineConfig({
   testDir: './tests',
-  fullyParallel: true,
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 1,
@@ -20,9 +20,7 @@ module.exports = defineConfig({
   use: {
     trace: 'on-first-retry',
     headless: false,
-    launchOptions: {
-      headless: false,
-    },
+    
   },
 
   
@@ -33,9 +31,7 @@ module.exports = defineConfig({
         ...devices['Desktop Chrome'],
         viewport:{width:1792, height:1120},
         headless: false,
-        launchOptions: {
-          headless: false,
-        },
+        
       },
     },
 
