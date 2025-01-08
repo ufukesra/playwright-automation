@@ -18,7 +18,7 @@ test.describe('Test Group', () => {
     });
 
     test.afterEach(async ({page}) => {
-        await page.waitForTimeout(3000);
+        //await page.waitForTimeout(3000);
 
     });
 
@@ -67,7 +67,7 @@ test.describe('Test Group', () => {
         //You can use both '1' as a value or 'Option 1' as a text in the below method
     
     //wait for 2 seconds
-    await page.waitForTimeout(2000);
+    //await page.waitForTimeout(2000);
     //await simpleDropdown.selectOption('1');
     
     
@@ -108,7 +108,13 @@ test.describe('Test Group', () => {
     let inputValue = await inputBox.inputValue();
     expect(inputValue).toBe('100');
     
-    
+  });
 
+
+  test('getAttribute(), retrives the attribute value ', async ({ page }) => {
+   let inputsLink=page.getByText("Inputs");
+   let actualLink= await inputsLink.getAttribute('href');
+   let expectedLink='/inputs';
+   await expect(actualLink).toEqual(expectedLink);
   });
 });
