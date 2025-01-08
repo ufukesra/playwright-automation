@@ -54,7 +54,36 @@ test.describe('Test Group', () => {
     await expect(checkBox2).not.toBeChecked();
   });
 
-  test('C', async ({ page }) => {
-    // Empty test
+  test('selectOption()', async ({ page }) => {
+    //let dropdownLink= page.locator('a[href="/dropdowns"]');
+    let dropdownLink= page.locator("text='Dropdown'");
+    await dropdownLink.click();
+
+    let simpleDropdown= page.locator("//select[@id='dropdown']");
+    
+    //select by the value
+         //<option value="1">Option 1</option>
+        //<option value="2">Option 2</option>
+        //You can use both '1' as a value or 'Option 1' as a text in the below method
+    
+    //wait for 2 seconds
+    await page.waitForTimeout(2000);
+    //await simpleDropdown.selectOption('1');
+    
+    
+    // select by the test
+    
+    //await simpleDropdown.selectOption('Option 1');
+    //await simpleDropdown.selectOption({label:'Option 1' });
+
+
+    //select By the index
+
+    await simpleDropdown.selectOption({index:1});
+
+
+
+
+
   });
 });
