@@ -1,6 +1,6 @@
 import { test,expect } from '@playwright/test';
 
-test.use({ headless: false });
+//test.use({ headless: false });
 test.describe('Test Group @group2', () => {
 
     //Create before each and add goto method in it,
