@@ -81,9 +81,34 @@ test.describe('Test Group', () => {
 
     await simpleDropdown.selectOption({index:1});
 
+    let selectedOption = await simpleDropdown.inputValue();
+    await expect(selectedOption).toBe('1');
 
+  });
 
+  test('innerText(): retrieve the visible text of the element', async ({ page }) => {
+    let headerElement= page.locator("//span[@class='h1y']");
+    let actualHeaderText = await headerElement.innerText();
+    let expectedHeaderText = "Test Automation Practice";
 
+    await expect(headerElement).toContainText("Automation");
+    await expect(headerElement).toHaveText(expectedHeaderText);
+
+    await expect(actualHeaderText).toEqual(expectedHeaderText);
+    
+
+  });
+
+  test('inputValue(), only works with <input>, <textarea>, and <select>', async ({ page }) => {
+    let inputsLink= page.getByText("Inputs");
+    await inputsLink.click();
+    let inputBox = page.locator("//input[@type='number']");
+    await inputBox.fill('100');
+
+    let inputValue = await inputBox.inputValue();
+    expect(inputValue).toBe('100');
+    
+    
 
   });
 });
