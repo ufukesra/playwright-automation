@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "tests":"playwright test",
-    "test:specific":"playwright test ./tests/*/playwright-intro.test.js",
-    "test:tag":"npx playwright test --grep @group2",
+    "test:specific":"playwright test ./tests/*/sep-login.test.js",
+    "test:tag":"npx playwright test --grep @env",
     "report":"playwright show-report",
     "test:headed":"playwright test --headed",
     "test:chrome-headed": "playwright test --headed --project=chromium"
