@@ -1,0 +1,11 @@
+Playwright DAy07:
+
+    Topics:
+        MultiWindows
+        FileUpload & Download
+        Fixtures (context, browser)
+        More Perplexity Collections
+
+
+    Next Class:
+        Recording Class
